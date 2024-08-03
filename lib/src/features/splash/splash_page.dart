@@ -16,7 +16,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
     Future.delayed(
-      Duration(milliseconds: 1500),
+      Duration(milliseconds: 3000),
       () {
         context.router.replaceAll(
           [
