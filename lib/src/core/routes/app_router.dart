@@ -17,6 +17,15 @@ class AppRouter extends $AppRouter {
       path: AppRoutes.splashPage,
       initial: true,
     ),
+    AutoRoute(page: DashboardRoute.page, path: AppRoutes.dashboardPage, children: [
+      AutoRoute(
+        page: HomeRoute.page,
+        path: AppRoutes.homePage,
+      ),
+      AutoRoute(
+        page: InshortsRoute.page,
+        path: "notice-home",
+      ),
+    ]),
   ];
 }
-

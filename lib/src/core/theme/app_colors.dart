@@ -1,7 +1,7 @@
 import 'package:news/src/core/core.dart';
 
 class AppColors {
-  static const Color primaryColor = Color(0xFFE2B058);
+  static const Color primaryColor = Color(0xFF4e62ad);
   static Color disbaledButtonColor = primaryColor.withOpacity(.3);
 
   static const Color black = Color.fromARGB(255, 0, 0, 0);

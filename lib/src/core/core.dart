@@ -12,6 +12,8 @@ export 'package:flutter/material.dart';
 export 'components/adaptive_sizer/adaptive.dart';
 export 'session/session.dart';
 export 'services/services.dart';
+export 'package:news/src/core/assets/assets.gen.dart';
+
 
 /// Cubit, blocs, freezed
 export 'form/form.dart';

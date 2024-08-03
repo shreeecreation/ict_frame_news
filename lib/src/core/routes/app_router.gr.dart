@@ -8,51 +8,99 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i2;
-import 'package:news/src/core/core.dart' as _i3;
-import 'package:news/src/features/splash/splash_page.dart' as _i1;
+import 'package:auto_route/auto_route.dart' as _i5;
+import 'package:news/src/features/dashboard/presentation/view/dashboard_page.dart'
+    as _i1;
+import 'package:news/src/features/dashboard/presentation/view/home_page.dart'
+    as _i2;
+import 'package:news/src/features/dashboard/presentation/view/inshorts_page.dart'
+    as _i3;
+import 'package:news/src/features/splash/splash_page.dart' as _i4;
 
-abstract class $AppRouter extends _i2.RootStackRouter {
+abstract class $AppRouter extends _i5.RootStackRouter {
   $AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, _i2.PageFactory> pagesMap = {
-    SplashRoute.name: (routeData) {
-      final args = routeData.argsAs<SplashRouteArgs>(
-          orElse: () => const SplashRouteArgs());
-      return _i2.AutoRoutePage<void>(
+  final Map<String, _i5.PageFactory> pagesMap = {
+    DashboardRoute.name: (routeData) {
+      return _i5.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i1.SplashPage(key: args.key),
+        child: const _i1.DashboardPage(),
       );
-    }
+    },
+    HomeRoute.name: (routeData) {
+      return _i5.AutoRoutePage<void>(
+        routeData: routeData,
+        child: const _i2.HomePage(),
+      );
+    },
+    InshortsRoute.name: (routeData) {
+      return _i5.AutoRoutePage<void>(
+        routeData: routeData,
+        child: const _i3.InshortsPage(),
+      );
+    },
+    SplashRoute.name: (routeData) {
+      return _i5.AutoRoutePage<void>(
+        routeData: routeData,
+        child: const _i4.SplashPage(),
+      );
+    },
   };
 }
 
 /// generated route for
-/// [_i1.SplashPage]
-class SplashRoute extends _i2.PageRouteInfo<SplashRouteArgs> {
-  SplashRoute({
-    _i3.Key? key,
-    List<_i2.PageRouteInfo>? children,
-  }) : super(
+/// [_i1.DashboardPage]
+class DashboardRoute extends _i5.PageRouteInfo<void> {
+  const DashboardRoute({List<_i5.PageRouteInfo>? children})
+      : super(
+          DashboardRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'DashboardRoute';
+
+  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i2.HomePage]
+class HomeRoute extends _i5.PageRouteInfo<void> {
+  const HomeRoute({List<_i5.PageRouteInfo>? children})
+      : super(
+          HomeRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'HomeRoute';
+
+  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i3.InshortsPage]
+class InshortsRoute extends _i5.PageRouteInfo<void> {
+  const InshortsRoute({List<_i5.PageRouteInfo>? children})
+      : super(
+          InshortsRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'InshortsRoute';
+
+  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i4.SplashPage]
+class SplashRoute extends _i5.PageRouteInfo<void> {
+  const SplashRoute({List<_i5.PageRouteInfo>? children})
+      : super(
           SplashRoute.name,
-          args: SplashRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'SplashRoute';
 
-  static const _i2.PageInfo<SplashRouteArgs> page =
-      _i2.PageInfo<SplashRouteArgs>(name);
-}
-
-class SplashRouteArgs {
-  const SplashRouteArgs({this.key});
-
-  final _i3.Key? key;
-
-  @override
-  String toString() {
-    return 'SplashRouteArgs{key: $key}';
-  }
+  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
 }

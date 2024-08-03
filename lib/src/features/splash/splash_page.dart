@@ -1,5 +1,4 @@
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:news/src/core/assets/assets.gen.dart';
 import 'package:news/src/core/core.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -13,36 +12,47 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
- 
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(
+      Duration(milliseconds: 1500),
+      () {
+        context.router.replaceAll(
+          [
+            DashboardRoute(),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return 
-       ScaffoldWrapper(
-        backgroundColor: AppColors.white,
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                height: 120,
-                width: 120,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  image: DecorationImage(
-                    image: Assets.images.logo.provider(),
-                    fit: BoxFit.cover,
-                  ),
+    return ScaffoldWrapper(
+      backgroundColor: AppColors.white,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              height: 120,
+              width: 120,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                image: DecorationImage(
+                  image: Assets.images.logo.provider(),
+                  fit: BoxFit.cover,
                 ),
-              ).animate().fade(duration: 500.ms),
-              20.verticalSpace,
-              const CircularProgressIndicator().animate().fade(
-                    delay: 500.ms,
-                  ),
-            ],
-          ),
+              ),
+            ).animate().fade(duration: 500.ms),
+            20.verticalSpace,
+            const CircularProgressIndicator().animate().fade(
+                  delay: 500.ms,
+                ),
+          ],
         ),
+      ),
     );
   }
 }
-
-
