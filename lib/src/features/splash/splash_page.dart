@@ -15,12 +15,12 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(
-      Duration(milliseconds: 3000),
+    Future.delayed( 
+      const Duration(milliseconds: 3000),
       () {
         context.router.replaceAll(
           [
-            DashboardRoute(),
+            const DashboardRoute(),
           ],
         );
       },

@@ -17,6 +17,10 @@ class AppRouter extends $AppRouter {
       path: AppRoutes.splashPage,
       initial: true,
     ),
+    AutoRoute(
+      page: NewsDetailRoute.page,
+      path: '/news-detail',
+    ),
     AutoRoute(page: DashboardRoute.page, path: AppRoutes.dashboardPage, children: [
       AutoRoute(
         page: HomeRoute.page,

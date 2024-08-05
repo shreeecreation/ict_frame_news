@@ -5,6 +5,7 @@ export 'buttons/custom_button.dart';
 export 'text_field/custom_text_field.dart';
 export 'snackbar/snackbar_widget.dart';
 export 'badge/badge_component.dart';
+export 'badge/value_listenable_badge_component.dart';
 export 'dialog_box/custom_dialog_box.dart';
 export 'dropdown/custom_dropdownfield.dart';
 export 'bottom_sheet/bottom_sheet.dart';
