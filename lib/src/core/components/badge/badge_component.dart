@@ -16,18 +16,19 @@ class BadgeComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 35,
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: const BorderRadius.all(
-            Radius.circular(25.0),
-          ),
-          border: Border.all(
-            color: borderColor,
-          ),
+      height: 35,
+      width: 100,
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: const BorderRadius.all(
+          Radius.circular(25.0),
         ),
-        child: Center(
-            child: Padding(
+        border: Border.all(
+          color: borderColor,
+        ),
+      ),
+      child: Center(
+        child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 15.0,
             vertical: 8.0,
@@ -36,6 +37,8 @@ class BadgeComponent extends StatelessWidget {
             title,
             style: AppTextStyles.text11PxSemiBold.copyWith(color: textColor),
           ),
-        )));
+        ),
+      ),
+    );
   }
 }

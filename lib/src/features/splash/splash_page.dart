@@ -20,7 +20,7 @@ class _SplashPageState extends State<SplashPage> {
       () {
         context.router.replaceAll(
           [
-            const DashboardRoute(),
+            const ChoosePersonalizedRoute(),
           ],
         );
       },
