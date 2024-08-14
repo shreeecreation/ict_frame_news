@@ -90,12 +90,29 @@ class NewsCard extends StatelessWidget {
                       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
                       100,
                     ),
-                    style: AppTextStyles.text16PxMedium,
+                    style: AppTextStyles.text13PxMedium,
                   ),
                   10.verticalSpace,
-                  Text(
-                    "Source : NK Magazine",
-                    style: AppTextStyles.text13PxSemiBold.primary,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Source : NK Magazine",
+                        style: AppTextStyles.text13PxSemiBold.primary,
+                      ),
+                      Container(
+                        height: 40,
+                        width: 40,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: AppColors.greyColor,
+                        ),
+                        child: Icon(
+                          Icons.arrow_forward,
+                          size: 20,
+                        ),
+                      )
+                    ],
                   ),
                 ],
               ),
