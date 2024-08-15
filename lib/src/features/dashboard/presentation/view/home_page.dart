@@ -10,22 +10,21 @@ class HomePage extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            toolbarHeight: 100,
-            title: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Monday, August 5",
-                  style: AppTextStyles.text14Px.textGrey,
-                ),
-                5.verticalSpace,
-                Text(
-                  "Top News",
-                  style: AppTextStyles.text20PxSemiBold,
-                ),
-              ],
-            ),
+            toolbarHeight: 90,
+            centerTitle: true,
+            title: SizedBox(height: 90, child: AppCacheImageViewer(imageUrl: Assets.images.logo.path, imageTypeEnum: ImageTypeEnum.assets)),
           ),
+          SliverToBoxAdapter(
+              child: CustomTextField(
+            hintText: "Search news topic here...",
+            prefixIcon: Icon(
+              Icons.search,
+            ),
+            hintStyle: AppTextStyles.text12Px.textGrey.copyWith(
+              fontStyle: FontStyle.italic,
+            ),
+          ).px(10.0)),
+          10.verticalSpace.toSliverBox,
           SliverToBoxAdapter(
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -97,17 +96,17 @@ class NewsCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Source : NK Magazine",
+                        "By : NK Magazine",
                         style: AppTextStyles.text13PxSemiBold.primary,
                       ),
                       Container(
                         height: 40,
                         width: 40,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           color: AppColors.greyColor,
                         ),
-                        child: Icon(
+                        child: const Icon(
                           Icons.arrow_forward,
                           size: 20,
                         ),
