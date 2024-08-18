@@ -21,7 +21,11 @@ class AppRouter extends $AppRouter {
       page: NewsDetailRoute.page,
       path: '/news-detail',
     ),
-       AutoRoute(
+    AutoRoute(
+      page: CategoryRoute.page,
+      path: "/category-home",
+    ),
+    AutoRoute(
       page: ChoosePersonalizedRoute.page,
       path: '/choose-personalized',
     ),

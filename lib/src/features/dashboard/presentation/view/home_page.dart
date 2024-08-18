@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
           SliverToBoxAdapter(
               child: CustomTextField(
             hintText: "Search news topic here...",
-            prefixIcon: Icon(
+            prefixIcon: const Icon(
               Icons.search,
             ),
             hintStyle: AppTextStyles.text12Px.textGrey.copyWith(
@@ -28,13 +28,33 @@ class HomePage extends StatelessWidget {
           SliverToBoxAdapter(
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              child: ValueListenableBadgeComponent<String>(
-                length: 4,
-                status: const ["All", "Finance", "Sports", "Economic"],
-                badgeColor: AppColors.primaryColor,
-                badgeDisabledColor: AppColors.white,
-                borderColor: AppColors.border,
-                onSelected: (index) {},
+              child: Row(
+                children: [
+                  ValueListenableBadgeComponent<String>(
+                    length: 3,
+                    status: const [
+                      "All",
+                      "Finance",
+                      "Sports",
+                    ],
+                    badgeColor: AppColors.primaryColor,
+                    badgeDisabledColor: AppColors.white,
+                    borderColor: AppColors.border,
+                    onSelected: (index) {},
+                  ),
+                  10.horizontalSpace,
+                  GestureDetector(
+                    onTap: () {
+                      context.pushRoute(const CategoryRoute());
+                    },
+                    child: const BadgeComponents(
+                      color: AppColors.white,
+                      textColor: Colors.blueGrey,
+                      title: "See All",
+                      borderColor: AppColors.border,
+                    ),
+                  ),
+                ],
               ),
             ).px(10.0),
           ),

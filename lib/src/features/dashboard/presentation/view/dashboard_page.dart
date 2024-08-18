@@ -31,17 +31,25 @@ class _DashboardPageState extends State<DashboardPage> {
                   )),
               SizedBox(height: 25, child: AppCacheImageViewer(imageUrl: Assets.svg.home.path, imageTypeEnum: ImageTypeEnum.svg)))),
       NavigationDestination(
-          label: 'Inshorts',
-          icon: dashboardTabs(
-              tabsRouter?.activeIndex == 1,
-              Container(
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: AppColors.greyColor),
-                  height: 35,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0),
-                    child: AppCacheImageViewer(imageUrl: Assets.svg.fast.path, imageTypeEnum: ImageTypeEnum.svg),
-                  )),
-              SizedBox(height: 25, child: AppCacheImageViewer(imageUrl: Assets.svg.fast.path, imageTypeEnum: ImageTypeEnum.svg)))),
+        label: 'Inshorts',
+        icon: dashboardTabs(
+          tabsRouter?.activeIndex == 1,
+          Container(
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: AppColors.greyColor),
+              height: 35,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: AppCacheImageViewer(imageUrl: Assets.svg.fast.path, imageTypeEnum: ImageTypeEnum.svg),
+              )),
+          SizedBox(
+            height: 25,
+            child: AppCacheImageViewer(
+              imageUrl: Assets.svg.fast.path,
+              imageTypeEnum: ImageTypeEnum.svg,
+            ),
+          ),
+        ),
+      ),
     ];
   }
 
